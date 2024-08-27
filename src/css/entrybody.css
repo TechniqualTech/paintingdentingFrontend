@@ -1,0 +1,171 @@
+.title_lg {
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+.title_md {
+    font-size: 1.5rem;
+    font-weight: 800;
+
+}
+
+.title_sm {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.grid_icon {
+    width: 30px;
+    height: 30px;
+}
+
+.grid_icon_div {
+    width: 60px;
+    height: 60px;
+}
+
+.till_now {
+    height: 40vw;
+}
+
+.horizontal_line {
+    height: 0.5px;
+    border: 1px solid rgb(255, 88, 88);
+    width: 200px;
+}
+
+.line_div_high {
+    height: 6vw;
+}
+
+.service_icon {
+    width: 150px;
+    height: 50px;
+}
+
+.wall_design {
+    width: 40vw;
+    height: 30vw;
+}
+
+.wall_design2 {
+    width: 40vw;
+    height: 30vw;
+}
+
+.beamroom {
+    width: 400px;
+    height: 400px;
+}
+
+.white {
+    color: white !important;
+}
+
+.parallex {
+    background-image: url('../../src/assets/images/Bedroom-mob.jpg');
+    min-height: 200px;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* back and forth animation  */
+.back_forth {
+    animation: move 1s ease-in-out infinite;
+}
+
+@keyframes move {
+    0% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(10px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* .back_forth:hover{
+    animation-play-state: running;
+}
+.back_forth:not(:hover) {
+    animation-play-state: paused;
+  } */
+
+
+/* rotation animation */
+
+.rotate_p:hover .rotate_c {
+    transition: transform 0.5s ease-in-out;
+    transform: rotate(90deg);
+}
+
+.rotate_p:not(:hover) {
+    transform: rotate(0deg);
+}
+
+/* unblock */
+.unblock_p:hover .unblock_c {
+    display: block !important;
+}
+
+/* scale animation  */
+.scaling_c {
+    animation: scale 1s ease-in-out infinite;
+}
+
+@keyframes scale {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.06);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.scaling_p:hover .scaling_c {
+    animation-play-state: running;
+}
+
+.scaling_p:not(:hover) .scaling_c {
+    animation-play-state: paused;
+}
+
+.icon_color_c {
+    filter: invert(0);
+    transition: filter 0.3s;
+}
+
+.icon_color_p:hover .icon_color_c {
+    filter: invert(1);
+}
+
+/* movsup */
+/* .movesup {
+    opacity: 0;
+    transform: translateY(100%);
+    animation: fadeInUp 1.5s 0.5s forwards;
+}
+
+.movesup.loaded {
+    animation: fadeInUp 1.5s 0.5s forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+} */
