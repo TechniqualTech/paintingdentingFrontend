@@ -59,4 +59,13 @@ code {
   transition: transform 0.5s ease-in-out;
 }
 
-/* fadeup anim */
+/* input number spinner remove*/
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.bg_grey{
+  background-color: rgba( 33, 37, 41 , .05);
+}

@@ -13,6 +13,13 @@
     font-size: 1.1rem;
     font-weight: 600;
 }
+.font_small{
+    font-size: 0.8rem!important;
+}
+.font_big{
+    font-size: 5vw;
+    font-weight: 1000;
+}
 
 .grid_icon {
     width: 30px;
@@ -44,11 +51,13 @@
 }
 
 .wall_design {
+    top:3vw;
     width: 40vw;
     height: 30vw;
 }
 
 .wall_design2 {
+    top: 20vw;
     width: 40vw;
     height: 30vw;
 }
@@ -169,3 +178,81 @@
         transform: translateY(0);
     }
 } */
+
+@media (max-width:1200px){
+}
+@media (max-width:992px){
+}
+@media (max-width:768px){
+    .font_res{
+        font-size: 4vw;
+    }
+    .font_res2{
+        font-size: 2vw;
+    }
+    .wall_design{
+        width: 60vw;
+        height: 50vw;
+    }
+    .wall_design2{
+        width: 60vw;
+        height: 50vw;
+    }
+    .cross_img_high{
+        height: 65vw!important;
+    }
+}
+@media (max-width:578px){
+}
+@media (max-width:350px){
+}
+
+/* freeappoint */
+.freeappointbg{
+    background-image:url('../../src/assets/images/freebook.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover
+}
+/* infinte industry partner move */
+.infinite-move {
+  position: relative;
+  animation: moveLeft 10s linear infinite;
+}
+
+@keyframes moveLeft {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+
+/* animate come from right wait and move to left */
+.animate-from-right {
+    animation: moveFromRight 3s linear forwards infinite;
+  }
+  
+  @keyframes moveFromRight {
+    0% {
+        transform: translateX(100%);
+      }
+      10% {
+        transform: translateX(0);
+      }
+      50% {
+        transform: translateX(0);
+        animation-play-state: paused;
+      }
+      90%{
+        animation-play-state: running;
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+  }
+  
+

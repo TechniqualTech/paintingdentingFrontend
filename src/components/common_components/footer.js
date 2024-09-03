@@ -14,7 +14,7 @@ import location from '../../assets/icons/icons8-location-50.png';
 
 export default function Footer() {
   return (
-    <div className='container-fluid footer overflow-hidden'>
+    <div className='container-fluid footer overflow-hidden my-5'>
       <div className='container d-flex flex-column p-2'>
         <div className='footer_body col-12 d-flex flex-lg-row flex-column'>
           <div className='col-lg-5 col-12 p-2'>

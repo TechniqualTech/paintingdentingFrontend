@@ -1,30 +1,42 @@
-
-import React, { useEffect, useRef } from 'react';
+import React, { useState } from 'react';
 
 export default function Ptc() {
-    const divRef = useRef(null);
-    const [isVisible, setIsVisible] = React.useState(false);
+  const [childDivs, setChildDivs] = useState([
+    <div>Child 1</div>,
+    <div>Child 2</div>,
+    <div>Child 3</div>,
+    <div>Child 4</div>,
+    <div>Child 5</div>,
+    <div>Child 6</div>,
+    <div>Child 7</div>,
+    <div>Child 8</div>,
+    <div>Child 9</div>,
+    <div>Child 10</div>,
+    <div>Child 11</div>,
+    <div>Child 12</div>,
+    <div>Child 13</div>,
+  ]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [divsPerPage, setDivsPerPage] = useState(4);
 
-    useEffect(() => {
-        const observer = new IntersectionObserver((entries) => {
-            console.log(entries)
-            if (entries[0].isIntersecting) {
-                setIsVisible(true);
-            } else {
-                setIsVisible(false);
-            }
-        }, { threshold: 1.0 });
+  const indexOfLastDiv = currentPage * divsPerPage;
+  const indexOfFirstDiv = indexOfLastDiv - divsPerPage;
+  const currentDivs = childDivs.slice(indexOfFirstDiv, indexOfLastDiv);
 
-        observer.observe(divRef.current);
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
-        return () => {
-            observer.unobserve(divRef.current);
-        };
-    }, []);
+  return (
+    <div>
+      {currentDivs.map((div, index) => (
+        <div key={index}>{div}</div>
+      ))}
+      <div>
+        <button onClick={() => paginate(1)}>1</button>
+        <button onClick={() => paginate(2)}>2</button>
+        <button onClick={() => paginate(3)}>3 </button>
 
-    return (
-        <div ref={divRef}>
-            {isVisible && <p>This div is visible on screen!</p>}
-        </div>
-    );
+        {/* Add more page buttons as needed */}
+      </div>
+    </div>
+  );
 }

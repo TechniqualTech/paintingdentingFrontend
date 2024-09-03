@@ -3,16 +3,16 @@ import next from "../../src/assets/icons/icons8-next-page-24.png"
 
 export default function Faq() {
   return (
-    <div className='container temp_anim12'>
+    <div className='container temp_anim12 my-4'>
       <div className='row'>
-        <div className='col-4' data-aos="fade-up" data-aos-duration="1500"  data-aos-offset="10%" data-aos-trigger="scroll" data-aos-anchor=".temp_anim12" data-aos-anchor-placement="top-bottom" data-aos-easing="linear">
-            <div className='p-4 m-4'>
+        <div className='col-md-4' data-aos="fade-up" data-aos-duration="1500"  data-aos-offset="10%" data-aos-trigger="scroll" data-aos-anchor=".temp_anim12" data-aos-anchor-placement="top-bottom" data-aos-easing="linear">
+            <div className='p-md-4 m-md-4'>
                 <p className='title_lg'> Frequently Asked</p>
                 <p className='title_md'><b>Questions</b></p>
                 <p>Got a question or a doubt? We've got the answers right here</p>
             </div>
         </div>
-        <div className='col-8 flex-column' data-aos="fade-up" data-aos-duration="1600"  data-aos-offset="10%" data-aos-trigger="scroll" data-aos-anchor=".temp_anim12" data-aos-anchor-placement="top-bottom" data-aos-easing="linear">
+        <div className='col-md-8 flex-column' data-aos="fade-up" data-aos-duration="1600"  data-aos-offset="10%" data-aos-trigger="scroll" data-aos-anchor=".temp_anim12" data-aos-anchor-placement="top-bottom" data-aos-easing="linear">
             <div className='shadow p-3 my-3 rotate_p unblock_p white_parent' >
                 <p className='title_sm m-0 white_child  '><span className='px-2 text-danger'>1.</span>What is PaintingDenting?<span className='float-end rotate_c'><img src={next} alt='next'/></span></p>
                 <p className='d-none unblock_c'>PaintingDenting.in is the most reliable and easiest way to get your home painting done. Connecting well-trained painters to needful customers, ApnaPainter creates a platform with an automated process from booking to payment that is time-efficient and super smooth. We also provide waterproofing that has become an integral part to maintain the integrity of homes.</p>

@@ -1,39 +1,44 @@
-.mini_favicon{
+.mini_favicon {
     width: 15px;
     height: 15px;
 }
 
-.social_media_icon{
+.social_media_icon {
     width: 30px;
     height: 30px;
 }
 
-.footer{
+.footer {
     background-color: #f4f4f4;
 }
 
-.footer_copyright{
+.footer_copyright {
     background-color: #eaeaea;
 }
-.header_nav{
+
+.header_nav {
     border-bottom: 1px solid rgb(242, 242, 242);
 }
-.hamburg_menu{
+
+.hamburg_menu {
     width: auto;
     height: auto;
     background-color: #fff;
     cursor: pointer;
 }
-.hamburg_menu span{
+
+.hamburg_menu span {
     display: block;
     width: 20px;
     height: 2px;
     background-color: black;
     margin-bottom: 5px;
 }
-.hamburg_container_hide{
-    display: none!important;
+
+.hamburg_container_hide {
+    display: none !important;
 }
-.hamburg_container_show{
-    display: block!important;
+
+.hamburg_container_show {
+    display: block !important;
 }

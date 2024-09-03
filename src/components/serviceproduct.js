@@ -17,10 +17,10 @@ import Wop from '../../src/assets/gif/Wood Painting.gif'
 
 export default function Serviceproduct() {
     return (
-        <div className='container d-flex flex-wrap text-center title_sm temp_anim11'>
-            <div className='col-3' data-aos="fade-up" data-aos-duration="1500"  data-aos-offset="10%" data-aos-trigger="scroll" data-aos-anchor=".temp_anim11" data-aos-anchor-placement="top-bottom" data-aos-easing="linear">
-                <MDBCard className='m-3 white_parent'>
-                    <MDBCardImage src={cv} alt='...' position='top' className='p-5' />
+        <div className='container d-flex flex-wrap justify-content-center align-items-center text-center title_sm temp_anim11'>
+            <div className='col-md-3 col-sm-4' data-aos="fade-up" data-aos-duration="1500"  data-aos-offset="10%" data-aos-trigger="scroll" data-aos-anchor=".temp_anim11" data-aos-anchor-placement="top-bottom" data-aos-easing="linear">
+                <MDBCard className='m-md-3 m-1 white_parent'>
+                    <MDBCardImage src={cv} alt='...' position='top' className='p-md-5 p-2' />
                     <MDBCardBody>
                         <MDBCardText className='white_child'>
                             Color Visualizer
@@ -28,9 +28,9 @@ export default function Serviceproduct() {
                     </MDBCardBody>
                 </MDBCard>
             </div>
-            <div className='col-3' data-aos="fade-up" data-aos-duration="1600"  data-aos-offset="10%" data-aos-trigger="scroll" data-aos-anchor=".temp_anim11" data-aos-anchor-placement="top-bottom" data-aos-easing="linear">
-                <MDBCard className=' m-3 white_parent'>
-                    <MDBCardImage src={ep} alt='...' position='top' className='p-5'/>
+            <div className='col-md-3 col-sm-4' data-aos="fade-up" data-aos-duration="1600"  data-aos-offset="10%" data-aos-trigger="scroll" data-aos-anchor=".temp_anim11" data-aos-anchor-placement="top-bottom" data-aos-easing="linear">
+                <MDBCard className=' m-md-3 m-1 white_parent'>
+                    <MDBCardImage src={ep} alt='...' position='top' className='p-md-5 p-2'/>
                     <MDBCardBody>
                         <MDBCardText className='white_child'>
                             Exterior Painting
@@ -38,9 +38,9 @@ export default function Serviceproduct() {
                     </MDBCardBody>
                 </MDBCard>
             </div>
-            <div className='col-3' data-aos="fade-up" data-aos-duration="1700"  data-aos-offset="10%" data-aos-trigger="scroll" data-aos-anchor=".temp_anim11" data-aos-anchor-placement="top-bottom" data-aos-easing="linear">
-                <MDBCard className=' m-3 white_parent'>
-                    <MDBCardImage src={ip} alt='...' position='top' className='p-5'/>
+            <div className='col-md-3 col-sm-4' data-aos="fade-up" data-aos-duration="1700"  data-aos-offset="10%" data-aos-trigger="scroll" data-aos-anchor=".temp_anim11" data-aos-anchor-placement="top-bottom" data-aos-easing="linear">
+                <MDBCard className=' m-md-3 m-1 white_parent'>
+                    <MDBCardImage src={ip} alt='...' position='top' className='p-md-5 p-2'/>
                     <MDBCardBody>
                         <MDBCardText className='white_child'>
                             interior Painting
@@ -48,9 +48,9 @@ export default function Serviceproduct() {
                     </MDBCardBody>
                 </MDBCard>
             </div>
-            <div className='col-3' data-aos="fade-up" data-aos-duration="1800"  data-aos-offset="10%" data-aos-trigger="scroll" data-aos-anchor=".temp_anim11" data-aos-anchor-placement="top-bottom" data-aos-easing="linear">
-                <MDBCard className=' m-3 white_parent'>
-                    <MDBCardImage src={mp} alt='...' position='top' className='p-5'/>
+            <div className='col-md-3 col-sm-4' data-aos="fade-up" data-aos-duration="1800"  data-aos-offset="10%" data-aos-trigger="scroll" data-aos-anchor=".temp_anim11" data-aos-anchor-placement="top-bottom" data-aos-easing="linear">
+                <MDBCard className=' m-md-3 m-1 white_parent'>
+                    <MDBCardImage src={mp} alt='...' position='top' className='p-md-5 p-2'/>
                     <MDBCardBody>
                         <MDBCardText className='white_child'>
                             Metal Painting
@@ -58,9 +58,9 @@ export default function Serviceproduct() {
                     </MDBCardBody>
                 </MDBCard>
             </div>
-            <div className='col-3' data-aos="fade-up" data-aos-duration="1900"  data-aos-offset="10%" data-aos-trigger="scroll" data-aos-anchor=".temp_anim11" data-aos-anchor-placement="top-bottom" data-aos-easing="linear">
-                <MDBCard className=' m-3 white_parent'>
-                    <MDBCardImage src={stan} alt='...' position='top' className='p-5'/>
+            <div className='col-md-3 col-sm-4' data-aos="fade-up" data-aos-duration="1900"  data-aos-offset="10%" data-aos-trigger="scroll" data-aos-anchor=".temp_anim11" data-aos-anchor-placement="top-bottom" data-aos-easing="linear">
+                <MDBCard className=' m-md-3 m-1 white_parent'>
+                    <MDBCardImage src={stan} alt='...' position='top' className='p-md-5 p-2'/>
                     <MDBCardBody>
                         <MDBCardText className='white_child'>
                             Stencils
@@ -68,9 +68,9 @@ export default function Serviceproduct() {
                     </MDBCardBody>
                 </MDBCard>
             </div>
-            <div className='col-3' data-aos="fade-up" data-aos-duration="2000"  data-aos-offset="10%" data-aos-trigger="scroll" data-aos-anchor=".temp_anim11" data-aos-anchor-placement="top-bottom" data-aos-easing="linear">
-                <MDBCard className=' m-3 white_parent'>
-                    <MDBCardImage src={textu} alt='...' position='top' className='p-5'/>
+            <div className='col-md-3 col-sm-4' data-aos="fade-up" data-aos-duration="2000"  data-aos-offset="10%" data-aos-trigger="scroll" data-aos-anchor=".temp_anim11" data-aos-anchor-placement="top-bottom" data-aos-easing="linear">
+                <MDBCard className=' m-md-3 m-1 white_parent'>
+                    <MDBCardImage src={textu} alt='...' position='top' className='p-md-5 p-2'/>
                     <MDBCardBody>
                         <MDBCardText className='white_child'>
                             Texture
@@ -78,9 +78,9 @@ export default function Serviceproduct() {
                     </MDBCardBody>
                 </MDBCard>
             </div>
-            <div className='col-3' data-aos="fade-up" data-aos-duration="2100"  data-aos-offset="10%" data-aos-trigger="scroll" data-aos-anchor=".temp_anim11" data-aos-anchor-placement="top-bottom" data-aos-easing="linear">
-                <MDBCard className=' m-3 white_parent'>
-                    <MDBCardImage src={wp} alt='...' position='top' className='p-5'/>
+            <div className='col-md-3 col-sm-4' data-aos="fade-up" data-aos-duration="2100"  data-aos-offset="10%" data-aos-trigger="scroll" data-aos-anchor=".temp_anim11" data-aos-anchor-placement="top-bottom" data-aos-easing="linear">
+                <MDBCard className=' m-md-3 m-1 white_parent'>
+                    <MDBCardImage src={wp} alt='...' position='top' className='p-md-5 p-2'/>
                     <MDBCardBody>
                         <MDBCardText className='white_child'>
                             Water Proofing
@@ -88,9 +88,9 @@ export default function Serviceproduct() {
                     </MDBCardBody>
                 </MDBCard>
             </div>
-            <div className='col-3' data-aos="fade-up" data-aos-duration="2200"  data-aos-offset="10%" data-aos-trigger="scroll" data-aos-anchor=".temp_anim11" data-aos-anchor-placement="top-bottom" data-aos-easing="linear">
-                <MDBCard className=' m-3 white_parent'>
-                    <MDBCardImage src={Wop} alt='...' position='top' className='p-5'/>
+            <div className='col-md-3 col-sm-4' data-aos="fade-up" data-aos-duration="2200"  data-aos-offset="10%" data-aos-trigger="scroll" data-aos-anchor=".temp_anim11" data-aos-anchor-placement="top-bottom" data-aos-easing="linear">
+                <MDBCard className=' m-md-3 m-1 white_parent'>
+                    <MDBCardImage src={Wop} alt='...' position='top' className='p-md-5 p-2  '/>
                     <MDBCardBody>
                         <MDBCardText className='white_child'>
                             Wood Painting

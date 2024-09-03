@@ -6,6 +6,8 @@ import Main_body from './pages/main_body';
 import Loader from "../src/components/loader"
 import 'aos/dist/aos.css';
 import AOS from 'aos';
+import { CurrentProvider } from '../src/contexts/CurrentContext';
+import { BrowserRouter } from 'react-router-dom';
 
 // fadeupanimation
 const getFadeUpAnimationAttributes = ({
@@ -27,7 +29,7 @@ const getFadeUpAnimationAttributes = ({
 };
 
 function App() {
-  
+
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     AOS.init();
@@ -38,16 +40,20 @@ function App() {
   });
   if (loading) {
     return (<>
-    <Loader/>
+      <Loader />
     </>
     );
   }
   return (<>
-    <Header />
-    <Main_body />
-    <Footer />
+    <BrowserRouter>
+      <CurrentProvider>
+        <Header />
+        <Main_body />
+        <Footer />
+      </CurrentProvider>
+    </BrowserRouter>
   </>);
 }
 
 export default App;
-export {getFadeUpAnimationAttributes};
+export { getFadeUpAnimationAttributes };

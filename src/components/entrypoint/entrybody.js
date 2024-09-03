@@ -30,38 +30,81 @@ import Industry_partner from '../industry_partner'
 import Contact from '../contact'
 import Blog from "../blog"
 import Testimonial from "../testimonial"
+import Num_count from '../num_count'
 import Ptc from "../ptc"
+//contexts
+import { useContext } from 'react';
+import { CurrentContext} from '../../contexts/CurrentContext'
+import { Breadcrumbs } from '@mui/material'
 
 export default function Entrybody() {
     const [currentComponent, setComponent] = useState("All")
+
+    //contexts
+    const { current, setCurrent } = useContext(CurrentContext);
+
+    //prop current section  
+    useEffect(() => {
+        if (current) {
+            console.log('eb',current)
+            const sectionElement = document.getElementById(current);
+            sectionElement.scrollIntoView({ behavior: 'smooth' });
+            setCurrent(null)
+        }
+    }, [current]);
+    const section = {
+        gallery: <div className='container-fluid temp_anim4 mt-5' id='gallery'>
+            <div className='d-flex justify-content-center align-items-center position-relative mb-5 line_div_high' data-aos="fade-up" data-aos-duration="1000" data-aos-offset="10%" data-aos-trigger="scroll" data-aos-anchor=".temp_anim4" data-aos-anchor-placement="top-bottom" data-aos-easing="linear">
+                <div className='horizontal_line  col-10 col-sm-6 col-md-5 col-lg-4'></div>
+                <div className='position-absolute bg-white text-center'>
+                    <h2 className='p-0 m-0 title_md'>Some Designs</h2>
+                    <p className='p-0 m-0'>That's really make your day and night</p>
+                </div>
+            </div>
+            <div className='container'>
+                <ul className='list-unstyled d-flex flex-row justify-content-center'>
+                    <li className=' px-sm-3 px-1 py-1 mx-1  bg-danger rounded-pill hover_redbg red_parent'><a className='text-decoration-none text-white red_child' onClick={() => design('All')}>All</a></li>
+                    <li className=' px-sm-3 px-1 py-1 mx-1 rounded-pill hover_redbg red_parent'><a className='text-decoration-none text-dark red_child' onClick={() => design('Beadroom')}>Badroom</a></li>
+                    <li className=' px-sm-3 px-1 py-1 mx-1 rounded-pill hover_redbg red_parent'><a className='text-decoration-none text-dark red_child' onClick={() => design('Living')}>Living Room</a></li>
+                    <li className=' px-sm-3 px-1 py-1 mx-1 rounded-pill hover_redbg red_parent'><a className='text-decoration-none text-dark red_child' onClick={() => design('Kids')}>Kids Room</a></li>
+                </ul>
+            </div>
+            <div className=''>
+                {currentComponent === "All" ? <All /> : currentComponent === "Beadroom" ? <Beadroom /> : currentComponent === "Kids" ? <Kids /> : currentComponent === "Living" ? <Living /> : <All />}
+            </div>
+        </div>,
+
+    }
+
+
     const design = (d) => {
         setComponent(d)
     }
 
-    useEffect(() => {
-    }, []);
+
 
     return (
-        <div className='overflow-hidden'>
-            <div className='position-relative mt-4'>
+        <div className='overflow-hidden my-5'>
+            <div className='position-relative'>
                 <div className='container-fluid p-0 m-0'>
                     <img src={entrybody} alt='entry_body' className='img-fluid'></img>
                 </div>
-                <div className='fw-bolder text-light position-absolute top-50 ms-4'  data-aos="fade-up" data-aos-once="true" data-aos-duration="2000"  data-aos-offset="200">
-                    <h2 className=' title_lg'>Your Home Makes You a Happy Environment</h2>
-                    <p className='text-white'>India’s Best Homes Interior Work Service</p>
+                <div className='fw-bolder text-light position-absolute top-50 ms-4' data-aos="fade-up" data-aos-once="true" data-aos-duration="2000" data-aos-offset="200">
+                    <h2 className=' title_lg font_res'>Your Home Makes You a Happy Environment</h2>
+                    <p className='text-white font_res2'>India’s Best Homes Interior Work Service</p>
                 </div>
             </div>
-            <div className='container-fluid my-5 footer temp_anim'>
-                <div className='row p-4'>
-                    <div className='col-5 p-4 ' data-aos="fade-up" data-aos-duration="1000"  data-aos-offset="10%" data-aos-trigger="scroll" data-aos-anchor=".temp_anim" data-aos-anchor-placement="top-bottom" data-aos-easing="linear">
+            {/* <Ptc/> */}
+            <div className='container-fluid mt-5 footer temp_anim'>
+                <div className='row p-md-4 p-2'>
+                    <div className='col-lg-5 col-12 p-md-4 ' data-aos="fade-up" data-aos-duration="1000" data-aos-offset="10%" data-aos-trigger="scroll" data-aos-anchor=".temp_anim" data-aos-anchor-placement="top-bottom" data-aos-easing="linear">
                         <button className='border-0 text-danger mb-4'>About us</button>
                         <h2 className='fw-bold title_md'>Looking for the best painters or painting services for your home?</h2>
                         <p>No matter where on earth we go, we act in response to colors. However, the significance of color is often undervalued. Choosing the right painters for our home is essential to us. And the easiest way to pick the most excellent paint colors is to start with our simple color engine. Check out the extensive range of splendid colors, and the conventional color schemes won't bind you for a scrupulous decorating style. Our paint visualizer provides a breathtaking way to create inspiration boards for your much-loved ideas. So you can keep all your color ideas in one dot. ApnaPainter’s color engine is the sneakiest way to add color to your walls without losing the comforting vibe of the room.</p>
                         <button className='px-5 py-2 border-0 bg-danger rounded text-light'>Read More <span className='d-inline-block grid_icon p-2 lh-0 pt-0 back_forth'><img src={rightarrow} alt='arrow' className='img-fluid ' /></span></button>
                     </div>
-                    <div className='col-7 d-flex  justify-content-center align-items-center'>
-                        <div className='col-6 flex-column  justify-content-center align-items-center ' data-aos="fade-up" data-aos-duration="1000"  data-aos-offset="10%" data-aos-trigger="scroll" data-aos-anchor=".temp_anim" data-aos-anchor-placement="top-bottom" data-aos-easing="linear">
+                    <div className='col-lg-7 col-12 d-flex flex-sm-row flex-column justify-content-center align-items-center'>
+                        <div className='col-sm-6 col-12 flex-column  justify-content-center align-items-center ' data-aos="fade-up" data-aos-duration="1000" data-aos-offset="10%" data-aos-trigger="scroll" data-aos-anchor=".temp_anim" data-aos-anchor-placement="top-bottom" data-aos-easing="linear">
                             <div className='col-11 rounded bg-white p-5 mt-4 shadow hover_red_parent scale icon_color_p'>
                                 <div className='grid_icon_div rounded-circle  d-flex align-items-center justify-content-center mb-4 child'>
                                     <img className=' img-fluid grid_icon icon_color_c' src={notebook}></img>
@@ -77,7 +120,7 @@ export default function Entrybody() {
                                 <p>Watch on apnapainter's expert painters beautifully transform your space..</p>
                             </div>
                         </div>
-                        <div className='col-6 flex-column mx-auto ' data-aos="fade-up" data-aos-duration="1000"  data-aos-offset="10%" data-aos-trigger="scroll" data-aos-anchor=".temp_anim" data-aos-anchor-placement="top-bottom" data-aos-easing="linear">
+                        <div className='col-sm-6 col-12 flex-column mx-auto ' data-aos="fade-up" data-aos-duration="1000" data-aos-offset="10%" data-aos-trigger="scroll" data-aos-anchor=".temp_anim" data-aos-anchor-placement="top-bottom" data-aos-easing="linear">
 
                             <div className='col-11  rounded bg-white  p-5 mt-4 shadow hover_red_parent scale icon_color_p'>
                                 <div className='grid_icon_div rounded-circle  d-flex align-items-center justify-content-center mb-4 child'>
@@ -97,43 +140,44 @@ export default function Entrybody() {
                     </div>
                 </div>
             </div>
-            <div className='container-fluid p-0 m-0 position-relative temp_anim11'>
+            <div className='container-fluid p-0 m-0 mt-5 position-relative temp_anim11'>
                 <div className='till_now overflow-hidden'>
                     <img src={sofa} alt='entry_body' className='img-fluid translate-middle-y '></img>
                 </div>
-                <div className=' position-absolute  d-flex justify-content-center align-items-center w-100 overflow-hidden top-50'>
-                    <ul className='list-unstyled d-flex  col-12 text-center' data-aos="fade-up" data-aos-duration="1000"  data-aos-offset="10%" data-aos-trigger="scroll" data-aos-anchor=".temp_anim11" data-aos-anchor-placement="top-bottom" data-aos-easing="linear" >
+                <Num_count/>
+                {/* <div className=' position-absolute  d-flex justify-content-center align-items-center w-100 overflow-hidden top-50'>
+                    <ul className='list-unstyled d-flex  col-12 text-center' data-aos="fade-up" data-aos-duration="1000" data-aos-offset="10%" data-aos-trigger="scroll" data-aos-anchor=".temp_anim11" data-aos-anchor-placement="top-bottom" data-aos-easing="linear" >
                         <li className='col-3'>
-                            <h2 className='title_lg'>30</h2>
-                            <p className='title_sm'>Year Experience</p>
+                            <h2 className='title_lg font_res'>30</h2>
+                            <p className='title_sm font_res2'>Year Experience</p>
                         </li>
                         <li className='col-3'>
-                            <h2 className='title_lg'>1000</h2>
-                            <p className='title_sm'>Total Works</p>
+                            <h2 className='title_lg font_res'>1000</h2>
+                            <p className='title_sm font_res2'>Total Works</p>
                         </li>
                         <li className='col-3'>
-                            <h2 className='title_lg'>1500</h2>
-                            <p className='title_sm'>Happy Customers</p>
+                            <h2 className='title_lg font_res'>1500</h2>
+                            <p className='title_sm font_res2'>Happy Customers</p>
                         </li>
                         <li className='col-3'>
-                            <h2 className='title_lg'>24</h2>
-                            <p className='title_sm'>Hour Of Support</p>
+                            <h2 className='title_lg font_res'>24</h2>
+                            <p className='title_sm font_res2'>Hour Of Support</p>
                         </li>
                     </ul>
 
-                </div>
+                </div> */}
             </div>
-            <div className='container-fluid temp_anim2'>
-                <div className='d-flex justify-content-center align-items-center position-relative mb-5 line_div_high' data-aos="fade-up" data-aos-duration="1000"  data-aos-offset="10%" data-aos-trigger="scroll" data-aos-anchor=".temp_anim2" data-aos-anchor-placement="top-bottom" data-aos-easing="linear">
+            <div className='container-fluid temp_anim2 mt-5'>
+                <div className='d-flex justify-content-center align-items-center position-relative mb-5 line_div_high' data-aos="fade-up" data-aos-duration="1000" data-aos-offset="10%" data-aos-trigger="scroll" data-aos-anchor=".temp_anim2" data-aos-anchor-placement="top-bottom" data-aos-easing="linear">
                     <div className='horizontal_line'></div>
                     <div className='position-absolute bg-white text-center'>
                         <h2 className='p-0 m-0 title_md'>Services</h2>
                         <p className='p-0 m-0'>We Help You With</p>
                     </div>
                 </div>
-                <div className='mx-5' data-aos="fade-up" data-aos-duration="1500"  data-aos-offset="10%" data-aos-trigger="scroll" data-aos-anchor=".temp_anim2" data-aos-anchor-placement="top-bottom" data-aos-easing="linear">
+                <div className='mx-md-5' data-aos="fade-up" data-aos-duration="1500" data-aos-offset="10%" data-aos-trigger="scroll" data-aos-anchor=".temp_anim2" data-aos-anchor-placement="top-bottom" data-aos-easing="linear">
                     <div className='row'>
-                        <div className='col-6  d-flex border-top white_parent'>
+                        <div className='col-md-6 col-12 d-flex border-top white_parent'>
                             <div className='service_icon  m-4'>
                                 <img src={bag} alt="bag" className='img-fluid'></img>
                             </div>
@@ -143,7 +187,7 @@ export default function Entrybody() {
                                     first visit. We transform your space into the home of your dreams within timelines.</p>
                             </div>
                         </div>
-                        <div className='col-6  d-flex border-top white_parent'>
+                        <div className='col-md-6  col-12 d-flex border-top white_parent'>
                             <div className='service_icon  m-4'>
                                 <img src={checklist} alt="bag" className='img-fluid'></img>
                             </div>
@@ -155,7 +199,7 @@ export default function Entrybody() {
                         </div>
                     </div>
                     <div className='row'>
-                        <div className='col-6  d-flex border-top white_parent'>
+                        <div className='col-md-6 col-12 d-flex border-top white_parent'>
                             <div className='service_icon m-4'>
                                 <img src={graph} alt="bag" className='img-fluid'></img>
 
@@ -166,7 +210,7 @@ export default function Entrybody() {
                                     follow proper technique when using wood paint to increase its longevity and restore...</p>
                             </div>
                         </div>
-                        <div className='col-6  d-flex border-top white_parent'>
+                        <div className='col-md-6 col-12  d-flex border-top white_parent'>
                             <div className='service_icon  m-4'>
                                 <img src={telescope} alt="bag" className='img-fluid'></img>
 
@@ -180,7 +224,7 @@ export default function Entrybody() {
                     </div>
 
                     <div className='row'>
-                        <div className='col-6  d-flex border-top white_parent'>
+                        <div className='col-md-6 col-12  d-flex border-top white_parent'>
                             <div className='service_icon  m-4'>
                                 <img src={sun} alt="bag" className='img-fluid'></img>
 
@@ -191,7 +235,7 @@ export default function Entrybody() {
                                     Injection Grouting Services, Terrace Waterproofing, Basement Waterproofing...   </p>
                             </div>
                         </div>
-                        <div className='col-6  d-flex border-top white_parent'>
+                        <div className='col-md-6 col-12  d-flex border-top white_parent'>
                             <div className='service_icon m-4'>
                                 <img src={calender} alt="bag" className='img-fluid'></img>
 
@@ -206,17 +250,17 @@ export default function Entrybody() {
                 </div>
 
             </div>
-            <div className='container-fluid temp_anim3'>
-                <div className='d-flex justify-content-center align-items-center position-relative mb-5 line_div_high' data-aos="fade-up" data-aos-duration="1000"  data-aos-offset="10%" data-aos-trigger="scroll" data-aos-anchor=".temp_anim3" data-aos-anchor-placement="top-bottom" data-aos-easing="linear">
+            <div className='container-fluid temp_anim3 mt-5'>
+                <div className='d-flex justify-content-center align-items-center position-relative mb-5 line_div_high' data-aos="fade-up" data-aos-duration="1000" data-aos-offset="10%" data-aos-trigger="scroll" data-aos-anchor=".temp_anim3" data-aos-anchor-placement="top-bottom" data-aos-easing="linear">
                     <div className='horizontal_line'></div>
                     <div className='position-absolute bg-white text-center'>
                         <h2 className='p-0 m-0 title_md'>Features</h2>
                         <p className='p-0 m-0'>Let's Explore it</p>
                     </div>
                 </div>
-                <div className='mx-5 white_parent' data-aos="fade-up" data-aos-duration="1500"  data-aos-offset="10%" data-aos-trigger="scroll" data-aos-anchor=".temp_anim3" data-aos-anchor-placement="top-bottom" data-aos-easing="linear">
-                    <div className='row'>
-                        <div className='col-5'>
+                <div className='mx-md-5 mx-2 white_parent' data-aos="fade-up" data-aos-duration="1500" data-aos-offset="10%" data-aos-trigger="scroll" data-aos-anchor=".temp_anim3" data-aos-anchor-placement="top-bottom" data-aos-easing="linear">
+                    <div className='row row-column-reverse'>
+                        <div className='col-md-5 col-12 order-2 order-md-1'>
                             <div>
                                 <h2 className='title_md white_child'>
                                     Fall In Love With Wall Texture House Painting</h2>
@@ -227,8 +271,8 @@ export default function Entrybody() {
                             </div>
 
                         </div>
-                        <div className='col-7'>
-                            <div className='position-relative w-100 h-100 py-4'>
+                        <div className='col-md-7 col-12 order-1 order-md-2'>
+                            <div className='position-relative w-100 h-md-100 py-4  cross_img_high'>
                                 <div className='position-absolute wall_design overflow-hidden end-0 scale'>
                                     <img src={wall_design} alt='wall_design' className='img-fluid p-1 bg-white'></img>
                                 </div>
@@ -238,9 +282,14 @@ export default function Entrybody() {
                             </div>
                         </div>
                     </div>
-                    <div className='row flex-row-reverse white_parent'>
-                        <div className='col-5' data-aos="fade-up" data-aos-duration="2000"  data-aos-offset="10%" data-aos-trigger="scroll" data-aos-anchor=".temp_anim3" data-aos-anchor-placement="top-bottom" data-aos-easing="linear">
-                            <div>
+                    <div className='row white_parent mt-5'>
+                        <div className='col-md-7 col-12 order-1' data-aos="fade-up" data-aos-duration="2000" data-aos-offset="10%" data-aos-trigger="scroll" data-aos-anchor=".temp_anim3" data-aos-anchor-placement="top-bottom" data-aos-easing="linear">
+                            <div className='position-relative w-100 h-100 my-4 scale'>
+                                <img src={beadroom} alt='beadroom' className='img-fluid pe-lg-5 '></img>
+                            </div>
+                        </div>
+                        <div className='col-md-5 col-12 order-2' data-aos="fade-up" data-aos-duration="2000" data-aos-offset="10%" data-aos-trigger="scroll" data-aos-anchor=".temp_anim3" data-aos-anchor-placement="top-bottom" data-aos-easing="linear">
+                            <div className=' w-100 h-100'>
                                 <h2 className='title_md white_child'>
                                     Wall Painting Ideas for Bedroom</h2>
                                 <p>When it comes to wall painting ideas for your bedroom, the possibilities are endless</p>
@@ -252,18 +301,15 @@ export default function Entrybody() {
                             </div>
 
                         </div>
-                        <div className='col-7' data-aos="fade-up" data-aos-duration="2000"  data-aos-offset="10%" data-aos-trigger="scroll" data-aos-anchor=".temp_anim3" data-aos-anchor-placement="top-bottom" data-aos-easing="linear">
-                            <div className='position-relative w-100 h-100 my-4 scale'>
-                                <img src={beadroom} alt='beadroom' className='img-fluid pe-5'></img>
-                            </div>
-                        </div>
+
                     </div>
                 </div>
 
             </div>
-            <div className='container-fluid temp_anim4'>
-                <div className='d-flex justify-content-center align-items-center position-relative mb-5 line_div_high' data-aos="fade-up" data-aos-duration="1000"  data-aos-offset="10%" data-aos-trigger="scroll" data-aos-anchor=".temp_anim4" data-aos-anchor-placement="top-bottom" data-aos-easing="linear">
-                    <div className='horizontal_line  col-4'></div>
+            {section.gallery}
+            {/* <div className='container-fluid temp_anim4 mt-5' id='gallery'>
+                <div className='d-flex justify-content-center align-items-center position-relative mb-5 line_div_high' data-aos="fade-up" data-aos-duration="1000" data-aos-offset="10%" data-aos-trigger="scroll" data-aos-anchor=".temp_anim4" data-aos-anchor-placement="top-bottom" data-aos-easing="linear">
+                    <div className='horizontal_line  col-10 col-sm-6 col-md-5 col-lg-4'></div>
                     <div className='position-absolute bg-white text-center'>
                         <h2 className='p-0 m-0 title_md'>Some Designs</h2>
                         <p className='p-0 m-0'>That's really make your day and night</p>
@@ -271,19 +317,19 @@ export default function Entrybody() {
                 </div>
                 <div className='container'>
                     <ul className='list-unstyled d-flex flex-row justify-content-center'>
-                        <li className=' px-3 py-1 mx-1  bg-danger rounded-pill hover_redbg red_parent'><a className='text-decoration-none text-white red_child' onClick={() => design('All')}>All</a></li>
-                        <li className=' px-3 py-1 mx-1 rounded-pill hover_redbg red_parent'><a className='text-decoration-none text-dark red_child' onClick={() => design('Beadroom')}>Badroom</a></li>
-                        <li className=' px-3 py-1 mx-1 rounded-pill hover_redbg red_parent'><a className='text-decoration-none text-dark red_child' onClick={() => design('Living')}>Living Room</a></li>
-                        <li className=' px-3 py-1 mx-1 rounded-pill hover_redbg red_parent'><a className='text-decoration-none text-dark red_child' onClick={() => design('Kids')}>Kids Room</a></li>
+                        <li className=' px-sm-3 px-1 py-1 mx-1  bg-danger rounded-pill hover_redbg red_parent'><a className='text-decoration-none text-white red_child' onClick={() => design('All')}>All</a></li>
+                        <li className=' px-sm-3 px-1 py-1 mx-1 rounded-pill hover_redbg red_parent'><a className='text-decoration-none text-dark red_child' onClick={() => design('Beadroom')}>Badroom</a></li>
+                        <li className=' px-sm-3 px-1 py-1 mx-1 rounded-pill hover_redbg red_parent'><a className='text-decoration-none text-dark red_child' onClick={() => design('Living')}>Living Room</a></li>
+                        <li className=' px-sm-3 px-1 py-1 mx-1 rounded-pill hover_redbg red_parent'><a className='text-decoration-none text-dark red_child' onClick={() => design('Kids')}>Kids Room</a></li>
                     </ul>
                 </div>
-                <div className='container'>
+                <div className=''>
                     {currentComponent === "All" ? <All /> : currentComponent === "Beadroom" ? <Beadroom /> : currentComponent === "Kids" ? <Kids /> : currentComponent === "Living" ? <Living /> : <All />}
                 </div>
-            </div>
-            <div className='container-fluid temp_anim5'>
-                <div className='d-flex justify-content-center align-items-center position-relative mb-5 line_div_high' data-aos="fade-up" data-aos-duration="1000"  data-aos-offset="10%" data-aos-trigger="scroll" data-aos-anchor=".temp_anim5" data-aos-anchor-placement="top-bottom" data-aos-easing="linear">
-                    <div className='horizontal_line  col-4'></div>
+            </div> */}
+            <div className='container-fluid temp_anim5 mt-5'>
+                <div className='d-flex justify-content-center align-items-center position-relative mb-5 line_div_high' data-aos="fade-up" data-aos-duration="1000" data-aos-offset="10%" data-aos-trigger="scroll" data-aos-anchor=".temp_anim5" data-aos-anchor-placement="top-bottom" data-aos-easing="linear">
+                    <div className='horizontal_line  col-10 col-sm-6 col-md-5 col-lg-4'></div>
                     <div className='position-absolute bg-white text-center'>
                         <h2 className='p-0 m-0 title_md'>Product and Services</h2>
                         <p className='p-0 m-0'>We will do Our Best</p>
